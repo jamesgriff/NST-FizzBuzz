@@ -3,8 +3,8 @@ package com.softwire.jwg.FizzBuzz;
 public class Main {
 
     public static void main(String[] args) {
-//        ClassicMethod();
-        StreamMethod();
+        ClassicMethod();
+//        StreamMethod();
     }
 
     private static void ClassicMethod() {
