@@ -5,51 +5,51 @@ import java.util.Collections;
 import java.util.List;
 
 public class FizzBuzzGenerator {
-    public static String getFizzBuzzFor(Integer i) {
+    public static String getFizzBuzzFor(Integer number) {
 
         List<String> words = new ArrayList<>();
-        doFizz(i, words);
-        doBuzz(i, words);
-        doBang(i, words);
-        doBong(i, words);
-        doFezz(i, words);
-        doReverse(i, words);
+        applyRuleFor3(number, words);
+        applyRuleFor5(number, words);
+        applyRuleFor7(number, words);
+        applyRuleFor11(number, words);
+        applyRuleFor13(number, words);
+        applyRuleFor17(number, words);
 
         if (!words.isEmpty()) {
             return String.join("", words);
         }
         else {
-            return i.toString();
+            return number.toString();
         }
     }
 
-    private static void doFizz(Integer i, List<String> words) {
-        if (i % 3 == 0) {
+    private static void applyRuleFor3(Integer number, List<String> words) {
+        if (number % 3 == 0) {
             words.add("Fizz");
         }
     }
 
-    private static void doBuzz(Integer i, List<String> words) {
-        if (i % 5 == 0) {
+    private static void applyRuleFor5(Integer number, List<String> words) {
+        if (number % 5 == 0) {
             words.add("Buzz");
         }
     }
 
-    private static void doBang(Integer i, List<String> words) {
-        if (i % 7 == 0) {
+    private static void applyRuleFor7(Integer number, List<String> words) {
+        if (number % 7 == 0) {
             words.add("Bang");
         }
     }
 
-    private static void doBong(Integer i, List<String> words) {
-        if (i % 11 == 0) {
+    private static void applyRuleFor11(Integer number, List<String> words) {
+        if (number % 11 == 0) {
             words.clear();
             words.add("Bong");
         }
     }
 
-    private static void doFezz(Integer i, List<String> words) {
-        if (i % 13 == 0) {
+    private static void applyRuleFor13(Integer number, List<String> words) {
+        if (number % 13 == 0) {
             Integer positionToAdd = getIndexOfFirstB(words);
             List<String> newWords = new ArrayList<>();
 
@@ -67,16 +67,16 @@ public class FizzBuzzGenerator {
     }
 
     private static Integer getIndexOfFirstB(List<String> words) {
-        for (Integer j = 0; j < words.size(); j++) {
-            if (words.get(j).startsWith("B")) {
-                return j;
+        for (Integer i = 0; i < words.size(); i++) {
+            if (words.get(i).startsWith("B")) {
+                return i;
             }
         }
         return words.size();
     }
 
-    private static void doReverse(Integer i, List<String> words) {
-        if (i % 17 == 0) {
+    private static void applyRuleFor17(Integer number, List<String> words) {
+        if (number % 17 == 0) {
             Collections.reverse(words);
         }
     }

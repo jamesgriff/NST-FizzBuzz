@@ -9,7 +9,9 @@ public class Main {
 
     private static void ClassicMethod() {
         for (Integer i = 1; i <= 300; i++) {
+
             String output = FizzBuzzGenerator.getFizzBuzzFor(i);
+
             System.out.println(i + ": " + output);
         }
     }
